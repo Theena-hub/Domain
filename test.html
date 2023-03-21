@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+ <script>
+    var GoogleAuth; // Google Auth object.
+function initClient() {
+  gapi.client.init({
+      'apiKey': 'YOUR_API_KEY',
+      'clientId': '982823580179-ilvtdm1dtdmk1fr5m6baaj92ehvhiivf.apps.googleusercontent.com',
+      'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+      'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest']
+  }).then(function () {
+      GoogleAuth = gapi.auth2.getAuthInstance();
+
+      // Listen for sign-in state changes.
+      GoogleAuth.isSignedIn.listen(updateSigninStatus);
+  });
+}
+ </script>   
+</body>
+</html>
